@@ -1,6 +1,6 @@
 import unittest
 import random
-from iterative_sorting import *
+
 
 class IterativeSortingTest(unittest.TestCase):
     def test_selection_sort(self):
@@ -9,9 +9,10 @@ class IterativeSortingTest(unittest.TestCase):
         arr3 = [0, 1, 2, 3, 4, 5]
         arr4 = random.sample(range(200), 50)
 
-        self.assertEqual(selection_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
+        from src.iterative_sorting.iterative_sorting import selection_sort
+        self.assertEqual(selection_sort(arr1), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         self.assertEqual(selection_sort(arr2), [])
-        self.assertEqual(selection_sort(arr3), [0,1,2,3,4,5])
+        self.assertEqual(selection_sort(arr3), [0, 1, 2, 3, 4, 5])
         self.assertEqual(selection_sort(arr4), sorted(arr4))
 
     def test_bubble_sort(self):
@@ -20,6 +21,7 @@ class IterativeSortingTest(unittest.TestCase):
         arr3 = [0, 1, 2, 3, 4, 5]
         arr4 = random.sample(range(200), 50)
 
+        from src.iterative_sorting.iterative_sorting import bubble_sort
         self.assertEqual(bubble_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
         self.assertEqual(bubble_sort(arr2), [])
         self.assertEqual(bubble_sort(arr3), [0,1,2,3,4,5])
