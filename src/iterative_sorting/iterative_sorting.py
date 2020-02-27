@@ -20,14 +20,28 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    for i in range(0, len(arr) - 1):
-        for n in range(0, len(arr) - 1):
-            lhs = i;
+    # Initiates swap boolean
+    swap = True
+    # Begins code and will run until swap is false
+    while swap:
+        # Swap is set to false, this will terminate the code if the swap is not set to true in the following loop
+        swap = False
+        # iterates through the given array starting at position 0 and stopping at position 10 (9)
+        for i in range(0, len(arr) - 1):
+            # Syntactic sugar, instantiating 2 vars
+            lhs = i
             rhs = i + 1
+            # from the array using the index we see if the left hand side is greater than the right hand side
             if arr[lhs] > arr[rhs]:
+                # if so we create a new variable to hold the left hand side and initiate a swap
+                # left hand goes to hold
                 hold = arr[lhs]
+                # right hand goes to left
                 arr[lhs] = arr[rhs]
+                # left hand goes to right
                 arr[rhs] = hold
+                # since this swap happened, we set swap to true causing this loop to re-fire
+                swap = True
 
     return arr
 
